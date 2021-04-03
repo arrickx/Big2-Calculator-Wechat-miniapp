@@ -1,0 +1,16 @@
+.inputBox{
+  height: 70rpx; 
+  border: 1rpx solid black;
+  margin: 15rpx 20rpx;
+  box-sizing: border-box;
+  width: 33%;
+  border-radius: 10rpx;
+}
+.inputStyle{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.picker{
+  margin: 50rpx;
+}

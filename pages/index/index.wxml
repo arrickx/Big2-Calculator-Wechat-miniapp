@@ -1,0 +1,18 @@
+<view class="inputStyle">
+  <input class="inputBox" type="number" id="1p" maxlength="4" placeholder="Player 1"/>
+  <input class="inputBox" type="number" id="2p" maxlength="4" placeholder="Player 2"/>
+</view>
+<view class="inputStyle">
+  <input class="inputBox" type="number" id="3p" maxlength="4" placeholder="Player 3"/>
+  <input class="inputBox" type="number" id="4p" maxlength="4" placeholder="Player 4"/>
+</view>
+
+<view class="inputStyle">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        Amount：{{array[index]}}
+      </view>
+  </picker>
+</view>
+
+<button type="primary"> Calculate </button>
