@@ -1,6 +1,15 @@
-<view class="centerStyle">
-  <image class="coverPic" mode="widthFix" src="https://images.theconversation.com/files/377569/original/file-20210107-17-q20ja9.jpg"/>
-</view>
+<swiper class="banner" indicator-dots indicator-color="#rgba(255,255,255,0.5)" indicator-active-color="#fff" autoplay circular interval="3000">
+  <swiper-item>
+    <image mode="heightFix" src="https://images.theconversation.com/files/377569/original/file-20210107-17-q20ja9.jpg"/>
+  </swiper-item>
+  <swiper-item>
+    <image mode="heightFix" src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg"/>
+  </swiper-item>
+  <swiper-item>
+    <image mode="heightFix" src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHw%3D&w=1000&q=80"/>
+  </swiper-item>
+</swiper>
+
 <view class="centerStyle">
   <input class="inputBox" type="number" id="1p" maxlength="4" placeholder="Player 1" value='{{inputValue1}}'/>
   <input class="inputBox" type="number" id="2p" maxlength="4" placeholder="Player 2" value='{{inputValue2}}'/>

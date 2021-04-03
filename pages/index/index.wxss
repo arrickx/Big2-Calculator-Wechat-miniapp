@@ -1,9 +1,12 @@
-.coverPic{
-  border-radius: 50rpx;
-  margin-bottom: 20rpx;
+.banner{
+  height: 450rpx;
+  margin-bottom: 50rpx;
 }
-image{
-  width: 90%;
+.banner image{
+  height: 450rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 50rpx;
 }
 button{
   margin-top: 30rpx;
