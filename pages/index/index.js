@@ -4,6 +4,20 @@ const app = getApp()
 
 Page({
   data: {
+    inputValue1:null,
+    inputValue2:null,
+    inputValue3:null,
+    inputValue4:null,
+  },
+  clearNumbers: function(){
+    this.setData({
+      inputValue1:'',
+      inputValue2:'',
+      inputValue3:'',
+      inputValue4:''
+    })
+  },
+  data: {
     array: ['Penny', 'Nickle', 'Dime', 'Quarter', 'Half-Dollar', 'Dollar'],
     objectArray: [
       {

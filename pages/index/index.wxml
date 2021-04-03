@@ -2,12 +2,12 @@
   <image class="coverPic" mode="widthFix" src="https://images.theconversation.com/files/377569/original/file-20210107-17-q20ja9.jpg"/>
 </view>
 <view class="centerStyle">
-  <input class="inputBox" type="number" id="1p" maxlength="4" placeholder="Player 1"/>
-  <input class="inputBox" type="number" id="2p" maxlength="4" placeholder="Player 2"/>
+  <input class="inputBox" type="number" id="1p" maxlength="4" placeholder="Player 1" value='{{inputValue1}}'/>
+  <input class="inputBox" type="number" id="2p" maxlength="4" placeholder="Player 2" value='{{inputValue2}}'/>
 </view>
 <view class="centerStyle">
-  <input class="inputBox" type="number" id="3p" maxlength="4" placeholder="Player 3"/>
-  <input class="inputBox" type="number" id="4p" maxlength="4" placeholder="Player 4"/>
+  <input class="inputBox" type="number" id="3p" maxlength="4" placeholder="Player 3" value='{{inputValue3}}'/>
+  <input class="inputBox" type="number" id="4p" maxlength="4" placeholder="Player 4" value='{{inputValue4}}'/>
 </view>
 
 <view class="centerStyle">
@@ -18,4 +18,5 @@
   </picker>
 </view>
 
-<button type="primary"> Calculate </button>
+<button type="primary" bindtap="calculateFinal"> Calculate </button>
+<button type="warn" bindtap="clearNumbers"> Clear </button>

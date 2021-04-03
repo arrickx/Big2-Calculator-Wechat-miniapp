@@ -5,6 +5,9 @@
 image{
   width: 90%;
 }
+button{
+  margin-top: 30rpx;
+}
 .inputBox{
   height: 70rpx; 
   border: 1rpx solid black;
