@@ -1,13 +1,16 @@
-<view class="inputStyle">
+<view class="centerStyle">
+  <image class="coverPic" mode="widthFix" src="https://images.theconversation.com/files/377569/original/file-20210107-17-q20ja9.jpg"/>
+</view>
+<view class="centerStyle">
   <input class="inputBox" type="number" id="1p" maxlength="4" placeholder="Player 1"/>
   <input class="inputBox" type="number" id="2p" maxlength="4" placeholder="Player 2"/>
 </view>
-<view class="inputStyle">
+<view class="centerStyle">
   <input class="inputBox" type="number" id="3p" maxlength="4" placeholder="Player 3"/>
   <input class="inputBox" type="number" id="4p" maxlength="4" placeholder="Player 4"/>
 </view>
 
-<view class="inputStyle">
+<view class="centerStyle">
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
       <view class="picker">
         Amount：{{array[index]}}
