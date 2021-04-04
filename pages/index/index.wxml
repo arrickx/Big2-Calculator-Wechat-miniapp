@@ -11,12 +11,12 @@
 </swiper>
 
 <view class="centerStyle">
-  <input class="inputBox" type="number" id="1p" maxlength="4" placeholder="Player 1" value='{{inputValue1}}'/>
-  <input class="inputBox" type="number" id="2p" maxlength="4" placeholder="Player 2" value='{{inputValue2}}'/>
+  <input class="inputBox" type="number" id="1p" maxlength="4" placeholder="Player 1" bindinput="input1" value="{{inputValue1}}"/>
+  <input class="inputBox" type="number" id="2p" maxlength="4" placeholder="Player 2" bindinput="input2" value="{{inputValue2}}"/>
 </view>
 <view class="centerStyle">
-  <input class="inputBox" type="number" id="3p" maxlength="4" placeholder="Player 3" value='{{inputValue3}}'/>
-  <input class="inputBox" type="number" id="4p" maxlength="4" placeholder="Player 4" value='{{inputValue4}}'/>
+  <input class="inputBox" type="number" id="3p" maxlength="4" placeholder="Player 3" bindinput="input3" value="{{inputValue3}}"/>
+  <input class="inputBox" type="number" id="4p" maxlength="4" placeholder="Player 4" bindinput="input4" value="{{inputValue4}}"/>
 </view>
 
 <view class="centerStyle">

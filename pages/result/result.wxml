@@ -1,0 +1,8 @@
+<!--pages/result/result.wxml-->
+<view>{{inputValue1}}</view>
+<view>{{inputValue2}}</view>
+<view>{{inputValue3}}</view>
+<view>{{inputValue4}}</view>
+<view>{{index}}</view>
+
+

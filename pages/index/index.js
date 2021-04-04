@@ -4,20 +4,10 @@ const app = getApp()
 
 Page({
   data: {
-    inputValue1:null,
-    inputValue2:null,
-    inputValue3:null,
-    inputValue4:null,
-  },
-  clearNumbers: function(){
-    this.setData({
-      inputValue1:'',
-      inputValue2:'',
-      inputValue3:'',
-      inputValue4:''
-    })
-  },
-  data: {
+    inputValue1:'',
+    inputValue2:'',
+    inputValue3:'',
+    inputValue4:'',
     array: ['Penny', 'Nickle', 'Dime', 'Quarter', 'Half-Dollar', 'Dollar'],
     objectArray: [
       {
@@ -47,10 +37,43 @@ Page({
     ],
     index: 3,
   },
+  input1: function (e) {
+    this.setData({
+      inputValue1:e.detail.value
+    })
+  },
+  input2: function (e) {
+    this.setData({
+      inputValue2:e.detail.value
+    })
+  },
+  input3: function (e) {
+    this.setData({
+      inputValue3:e.detail.value
+    })
+  },
+  input4: function (e) {
+    this.setData({
+      inputValue4:e.detail.value
+    })
+  },
+  clearNumbers: function () {
+    this.setData({
+      inputValue1:'',
+      inputValue2:'',
+      inputValue3:'',
+      inputValue4:'',
+    })
+  },
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
+    })
+  },
+  calculateFinal: function () {
+    var that = this
+    wx.navigateTo({
+      url:'/pages/result/result?inputValue1Data=' + that.data.inputValue1 + '&inputValue2Data=' + that.data.inputValue2 + '&inputValue3Data=' + that.data.inputValue3 + '&inputValue4Data=' + that.data.inputValue4 + '&indexData=' + that.data.index
     })
   },
 })
