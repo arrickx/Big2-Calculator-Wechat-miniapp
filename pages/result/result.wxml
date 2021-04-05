@@ -3,6 +3,6 @@
 <view>{{inputValue2}}</view>
 <view>{{inputValue3}}</view>
 <view>{{inputValue4}}</view>
-<view>{{index}}</view>
+<view>{{dollarValue}}</view>
 
 

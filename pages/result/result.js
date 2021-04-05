@@ -9,7 +9,7 @@ Page({
     inputValue2:null,
     inputValue3:null,
     inputValue4:null,
-    index:null,
+    dollarValue:null,
   },
 
   /**
@@ -22,7 +22,7 @@ Page({
       inputValue2:options.inputValue2Data,
       inputValue3:options.inputValue3Data,
       inputValue4:options.inputValue4Data,
-      index:options.indexData,
+      dollarValue:options.dollarData,
     })
   },
 
