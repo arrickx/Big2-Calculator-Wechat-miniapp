@@ -5,4 +5,8 @@
 <view>{{inputValue4}}</view>
 <view>{{dollarValue}}</view>
 
+<view>最终赢家 {{winner1}}</view>
+<view>第二赢家 {{winner2}}</view>
+<view>第二输家 {{loser1}}</view>
+<view>最终输家 {{loser2}}</view>
 

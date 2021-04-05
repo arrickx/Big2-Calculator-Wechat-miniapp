@@ -3,11 +3,8 @@
 const app = getApp()
 
 Page({
+  // initialize the data
   data: {
-    inputValue1:'',
-    inputValue2:'',
-    inputValue3:'',
-    inputValue4:'',
     dollarValue:0.25,
     array: ['Penny', 'Nickle', 'Dime', 'Quarter', 'Half-Dollar', 'Dollar'],
     objectArray: [
@@ -45,6 +42,7 @@ Page({
     ],
     index: 3,
   },
+  // create a function to change the data value to the input value
   input1: function (e) {
     this.setData({
       inputValue1:e.detail.value
@@ -65,14 +63,17 @@ Page({
       inputValue4:e.detail.value
     })
   },
+  // create a function to clear the input value and index
   clearNumbers: function () {
     this.setData({
       inputValue1:'',
       inputValue2:'',
       inputValue3:'',
       inputValue4:'',
+      index:3
     })
   },
+  // create a functon to change display of picker and value of dollarValue
   bindPickerChange: function (e) {
     this.setData({
       index: e.detail.value
@@ -80,9 +81,8 @@ Page({
     this.setData({
       dollarValue: this.data.objectArray[e.detail.value].value
     })
-    console.log("Hello, World!");
-    console.log(this.data.dollarValue);
   },
+  // navigate to the result page and send the necessary data to the next page for calculation
   calculateFinal: function () {
     var that = this
     wx.navigateTo({
