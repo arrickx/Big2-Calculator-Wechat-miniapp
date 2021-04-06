@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    winner2Text:"wins",
+    loser1Text:"losses"
   },
 
   /**
@@ -23,28 +25,29 @@ Page({
     })
     // Sort the data by accessding order for easier calculation
     this.data.scores.sort(function(a, b){return a-b});
-    console.log("原始数据")
-    console.log(this.data.scores)
     // Minus the numbers by the lowest number to keep the best player's score as 0
     that.setData({
       processedScore:[this.data.scores[0]-this.data.scores[0],this.data.scores[1]-this.data.scores[0],this.data.scores[2]-this.data.scores[0],this.data.scores[3]-this.data.scores[0]]
     })
-    console.log("处理后数据")
-    console.log(this.data.processedScore)
+    // Calculate the final score for each player
     that.setData({
-      winner1:(this.data.processedScore[0]+this.data.processedScore[1]+this.data.processedScore[2]+this.data.processedScore[3])*this.data.dollarValue,
-      winner2:(this.data.processedScore[3]-this.data.processedScore[1]+this.data.processedScore[2]-this.data.processedScore[1]-this.data.processedScore[1])*this.data.dollarValue,
-      loser1:(this.data.processedScore[2]+this.data.processedScore[2]-this.data.processedScore[3]-this.data.processedScore[1]+this.data.processedScore[2])*this.data.dollarValue,
-      loser2:(this.data.processedScore[3]+this.data.processedScore[3]-this.data.processedScore[1]+this.data.processedScore[3]-this.data.processedScore[2])*this.data.dollarValue,
+      winner1:((this.data.processedScore[0]+this.data.processedScore[1]+this.data.processedScore[2]+this.data.processedScore[3])*this.data.dollarValue).toFixed(2),
+      winner2:((this.data.processedScore[3]-this.data.processedScore[1]+this.data.processedScore[2]-this.data.processedScore[1]-this.data.processedScore[1])*this.data.dollarValue).toFixed(2),
+      loser1:((this.data.processedScore[2]+this.data.processedScore[2]-this.data.processedScore[3]-this.data.processedScore[1]+this.data.processedScore[2])*this.data.dollarValue).toFixed(2),
+      loser2:((this.data.processedScore[3]+this.data.processedScore[3]-this.data.processedScore[1]+this.data.processedScore[3]-this.data.processedScore[2])*this.data.dollarValue).toFixed(2),
     })
-    console.log("最终赢家")
-    console.log(this.data.winner1)
-    console.log("第二赢家")
-    console.log(this.data.winner2)
-    console.log("第二输家")
-    console.log(this.data.loser1)
-    console.log("最终输家")
-    console.log(this.data.loser2)
+    if (this.data.winner2<0) {
+      that.setData({
+        winner2:(this.data.winner2)*-1,
+        winner2Text:"losses",
+      }) 
+    }
+    if (this.data.loser1<0) {
+      that.setData({
+        loser1:(that.data.loser1)*-1,
+        loser1Text:"wins",
+      }) 
+    }
   },
 
   /**

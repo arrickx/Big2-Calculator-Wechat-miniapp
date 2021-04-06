@@ -1,12 +1,20 @@
-<!--pages/result/result.wxml-->
-<view>{{inputValue1}}</view>
-<view>{{inputValue2}}</view>
-<view>{{inputValue3}}</view>
-<view>{{inputValue4}}</view>
-<view>{{dollarValue}}</view>
+<icon class="centerStyle iconStyle" type="success" size="150"></icon>
+<view class="textViewStyle">
+  <text class="textStyle">Top Player wins</text>
+  <text class="textStyle">{{winner1}}</text>
+</view>
+<view class="textViewStyle">
+  <text class="textStyle">Second Player {{winner2Text}}</text>
+  <text class="textStyle">{{winner2}}</text>
+</view>
+<view class="textViewStyle">
+  <text class="textStyle">Third Player {{loser1Text}}</text>
+  <text class="textStyle">{{loser1}}</text>
+</view>
+<view class="textViewStyle">
+  <text class="textStyle">Last Player loses</text>
+  <text class="textStyle">{{loser2}}</text>
+</view>
 
-<view>最终赢家 {{winner1}}</view>
-<view>第二赢家 {{winner2}}</view>
-<view>第二输家 {{loser1}}</view>
-<view>最终输家 {{loser2}}</view>
+
 
