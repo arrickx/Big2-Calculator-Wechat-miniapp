@@ -5,6 +5,12 @@ const app = getApp()
 Page({
   // initialize the data
   data: {
+    inputValue1:'',
+    inputValue2:'',
+    inputValue3:'',
+    inputValue4:'',
+    calStatus:true,
+    clsStatus:true,
     dollarValue:0.25,
     array: ['Penny', 'Nickle', 'Dime', 'Quarter', 'Half-Dollar', 'Dollar'],
     objectArray: [
@@ -47,21 +53,25 @@ Page({
     this.setData({
       inputValue1:e.detail.value
     })
+    this.isEmpty()
   },
   input2: function (e) {
     this.setData({
       inputValue2:e.detail.value
     })
+    this.isEmpty()
   },
   input3: function (e) {
     this.setData({
       inputValue3:e.detail.value
     })
+    this.isEmpty()
   },
   input4: function (e) {
     this.setData({
       inputValue4:e.detail.value
     })
+    this.isEmpty()
   },
   // create a function to clear the input value and index
   clearNumbers: function () {
@@ -72,6 +82,7 @@ Page({
       inputValue4:'',
       index:3
     })
+    this.isEmpty()
   },
   // create a functon to change display of picker and value of dollarValue
   bindPickerChange: function (e) {
@@ -88,5 +99,25 @@ Page({
     wx.navigateTo({
       url:'/pages/result/result?inputValue1Data=' + that.data.inputValue1 + '&inputValue2Data=' + that.data.inputValue2 + '&inputValue3Data=' + that.data.inputValue3 + '&inputValue4Data=' + that.data.inputValue4 + '&dollarData=' + that.data.dollarValue
     })
+  },
+  isEmpty: function() {
+    if (this.data.inputValue1!='' || this.data.inputValue2!='' || this.data.inputValue3!='' || this.data.inputValue4!='') {
+      this.setData({
+        clsStatus: false
+      })
+    } else {
+      this.setData({
+        clsStatus: true
+      })
+    }
+    if (this.data.inputValue1!='' && this.data.inputValue2!='' && this.data.inputValue3!='' && this.data.inputValue4!='') {
+      this.setData({
+        calStatus: false
+      })
+    } else {
+      this.setData({
+        calStatus: true
+      })
+    }
   },
 })

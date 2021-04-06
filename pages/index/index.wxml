@@ -27,5 +27,5 @@
   </picker>
 </view>
 
-<button type="primary" bindtap="calculateFinal"> Calculate </button>
-<button type="warn" bindtap="clearNumbers"> Clear </button>
+<button type="primary" bindtap="calculateFinal" disabled="{{calStatus}}"> Calculate </button>
+<button type="warn" bindtap="clearNumbers" disabled="{{clsStatus}}"> Clear </button>
