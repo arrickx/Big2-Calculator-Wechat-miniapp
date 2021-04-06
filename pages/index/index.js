@@ -50,27 +50,87 @@ Page({
   },
   // create a function to change the data value to the input value
   input1: function (e) {
-    this.setData({
-      inputValue1:e.detail.value
-    })
+    if (Math.abs(e.detail.value.length - this.data.inputValue1.length) != 1) {
+      this.setData({
+        inputValue1: ''
+      })
+      return ''
+    } else {
+      let reg = /^[0-9]*$/
+      if (!reg.test(e.detail.value)) {
+        this.setData({
+          inputValue1: ''
+        })
+        return ''
+      } else {
+        this.setData({
+          inputValue1:e.detail.value
+        })
+      }
+    }
     this.isEmpty()
   },
   input2: function (e) {
-    this.setData({
-      inputValue2:e.detail.value
-    })
+    if (Math.abs(e.detail.value.length - this.data.inputValue2.length) != 1) {
+      this.setData({
+        inputValue2: ''
+      })
+      return ''
+    } else {
+      let reg = /^[0-9]*$/
+      if (!reg.test(e.detail.value)) {
+        this.setData({
+          inputValue2: ''
+        })
+        return ''
+      } else {
+        this.setData({
+          inputValue2:e.detail.value
+        })
+      }
+    }
     this.isEmpty()
   },
   input3: function (e) {
-    this.setData({
-      inputValue3:e.detail.value
-    })
+    if (Math.abs(e.detail.value.length - this.data.inputValue3.length) != 1) {
+      this.setData({
+        inputValue3: ''
+      })
+      return ''
+    } else {
+      let reg = /^[0-9]*$/
+      if (!reg.test(e.detail.value)) {
+        this.setData({
+          inputValue3: ''
+        })
+        return ''
+      } else {
+        this.setData({
+          inputValue3:e.detail.value
+        })
+      }
+    }
     this.isEmpty()
   },
   input4: function (e) {
-    this.setData({
-      inputValue4:e.detail.value
-    })
+    if (Math.abs(e.detail.value.length - this.data.inputValue4.length) != 1) {
+      this.setData({
+        inputValue4: ''
+      })
+      return ''
+    } else {
+      let reg = /^[0-9]*$/
+      if (!reg.test(e.detail.value)) {
+        this.setData({
+          inputValue4: ''
+        })
+        return ''
+      } else {
+        this.setData({
+          inputValue4:e.detail.value
+        })
+      }
+    }
     this.isEmpty()
   },
   // create a function to clear the input value and index

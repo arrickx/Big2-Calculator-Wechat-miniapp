@@ -4,11 +4,15 @@
 }
 .textViewStyle{
   display: flex;
-  justify-content: space-between;
-  text-align: left;
-  margin: 0rpx 15% 0rpx 5%;
+  margin: 0rpx 8% 0rpx 5%;
+}
+.textStyle1 {
+  margin: 15rpx 50rpx;
+  align-self: flex-start;
+  width: 50%;
 }
 .textStyle {
   margin: 15rpx 50rpx;
   align-self: flex-start;
+  width: 10%;
 }
