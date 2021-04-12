@@ -1,4 +1,4 @@
-<swiper class="banner" indicator-dots indicator-color="#rgba(255,255,255,0.5)" indicator-active-color="#fff" autoplay circular interval="3000">
+<swiper class="banner" indicator-dots indicator-color="#rgba(255,255,255,0.5)" indicator-active-color="#fff" autoplay circular interval="3500">
   <swiper-item>
     <image mode="heightFix" src="https://images.theconversation.com/files/377569/original/file-20210107-17-q20ja9.jpg"/>
   </swiper-item>
@@ -19,13 +19,13 @@
   <input class="inputBox" type="number" id="4p" maxlength="4" placeholder="Player 4" bindinput="input4" value="{{inputValue4}}"/>
 </view>
 
-<view class="centerStyle">
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <view class="picker">
-        Amount：{{array[index]}}
-      </view>
-  </picker>
-</view>
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+  <view class="picker">
+    <view class='textStyle'>Amount:</view>
+    <view class='amountStyle'>{{array[index]}} (${{objectArray[index].value}})</view>
+  </view>
+</picker>
+
 
 <button type="primary" bindtap="calculateFinal" disabled="{{calStatus}}"> Calculate </button>
 <button type="warn" bindtap="clearNumbers" disabled="{{clsStatus}}"> Clear </button>

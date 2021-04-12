@@ -36,14 +36,13 @@ Page({
       },
       {
         id: 4,
-        name: 'Half-Dollar'
-        ,
-        value: 0.5
+        name: 'Half-Dollar',
+        value: 0.50.toFixed(2)
       },
       {
         id: 5,
         name: 'Dollar',
-        value: 1.00
+        value: 1.00.toFixed(2)
       }
     ],
     index: 3,
