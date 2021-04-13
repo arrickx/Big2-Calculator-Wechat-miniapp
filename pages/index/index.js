@@ -185,4 +185,24 @@ Page({
   onPullDownRefresh: function () {
     this.clearNumbers()
   },
+    /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title:'锄大D计分器',
+      imageUrl:'/pages/img/logo.jpg'
+    }
+  },
+  onAddToFavorites(res) {
+    return {
+      title:'锄大D计分器',
+      imageUrl:'/pages/img/logo.jpg'
+    }
+  },
+  onShareTimeline() {
+    return {
+      title:'锄大D计分器',
+    }
+  }
 })
