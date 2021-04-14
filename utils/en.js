@@ -3,9 +3,12 @@ let en = {
   p2:'Player 2',
   p3:'Player 3',
   p4:'Player 4',
-  amt:'Amount:',
+  amt:'Amount',
   cal:'Calculate',
-  cls:'Clear'
+  cls:'Clear',
+  home:'Home',
+  info:'Info',
+  contact:'Contact',
 }
 
 module.exports = {

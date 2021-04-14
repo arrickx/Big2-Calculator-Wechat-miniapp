@@ -17,17 +17,17 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "Home",
+        "text": "首页",
         "iconPath": "pages/img/Home.png",
         "selectedIconPath": "pages/img/Home2.png"
       },{
         "pagePath": "pages/info/info",
-        "text": "Info",
+        "text": "说明",
         "iconPath": "pages/img/Paper.png",
         "selectedIconPath": "pages/img/Paper2.png"
       },{
         "pagePath": "pages/contact/contact",
-        "text": "Contact",
+        "text": "反馈",
         "iconPath": "pages/img/Chat.png",
         "selectedIconPath": "pages/img/Chat2.png"
       }

@@ -1,7 +1,6 @@
 // index.js
 // 获取应用实例
 const app = getApp()
-
 Page({
   // initialize the data
   data: {
@@ -12,37 +11,31 @@ Page({
     calStatus:true,
     clsStatus:true,
     dollarValue:0.25,
-    array: ['Penny', 'Nickle', 'Dime', 'Quarter', 'Half-Dollar', 'Dollar'],
+    array: ['Penny - $ 0.01', 'Nickle - $ 0.05', 'Dime - $ 0.10', 'Quarter - $ 0.25', 'Half-Dollar - $ 0.50', 'Dollar - $ 1.00'],
     objectArray: [
       {
         id: 0,
-        name: 'Penny',
         value: 0.01
       },
       {
         id: 1,
-        name: 'Nickle',
         value: 0.05
       },
       {
         id: 2,
-        name: 'Dime',
         value: 0.10
       },
       {
         id: 3,
-        name: 'Quarter',
         value: 0.25
       },
       {
         id: 4,
-        name: 'Half-Dollar',
-        value: 0.50.toFixed(2)
+        value: 0.50
       },
       {
         id: 5,
-        name: 'Dollar',
-        value: 1.00.toFixed(2)
+        value: 1.00
       }
     ],
     index: 3,
@@ -179,16 +172,10 @@ Page({
       })
     }
   },
-    /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
     this.clearNumbers();
     wx.stopPullDownRefresh()
   },
-    /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
     return {
       title:'锄大D计分器',
@@ -208,6 +195,18 @@ Page({
   },
   changeLanguage() {
     app.changeLanguage()
+    wx.setTabBarItem({
+      index: 0,
+      text:app.globalData.content.home,
+    })
+    wx.setTabBarItem({
+      index: 1,
+      text:app.globalData.content.info,
+    })
+    wx.setTabBarItem({
+      index: 2,
+      text:app.globalData.content.contact,
+    })
     wx.reLaunch({
       url: '/pages/index/index',
     })

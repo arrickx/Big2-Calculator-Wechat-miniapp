@@ -1,8 +1,7 @@
-// app.js
+import { content } from './utils/cn'
 //导入两个字典
 import cn from '/utils/cn'
 import en from '/utils/en'
-
 App({
   onLaunch() {
     // 展示本地存储能力
@@ -19,6 +18,7 @@ App({
 
     //每次启动小程序都重新获取所选语言的文本
     this.updateContent()
+
   },
   updateContent() {
     let lastLanguage = wx.getStorageSync('language')//获取当前语言
@@ -42,5 +42,5 @@ App({
   globalData: {
     userInfo: null,
     language: wx.getStorageSync('language'),
-  }
+  },
 })

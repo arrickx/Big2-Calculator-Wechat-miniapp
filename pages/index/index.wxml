@@ -24,10 +24,13 @@
 <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
   <view class="picker">
     <view class='textStyle'>{{content.amt}}</view>
-    <view class='amountStyle'>{{array[index]}} (${{objectArray[index].value}})</view>
+    <view class='amountStyle'>{{array[index]}}</view>
   </view>
 </picker>
 
+<view class="centerStyle">
+  <input class="inputBox" type="digit" id="amt" placeholder="{{content.amt}}"/>
+</view>
 
 <button type="primary" bindtap="calculateFinal" disabled="{{calStatus}}"> {{content.cal}} </button>
 <button type="warn" bindtap="clearNumbers" disabled="{{clsStatus}}"> {{content.cls}} </button>
