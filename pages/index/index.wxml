@@ -1,3 +1,5 @@
+<view bindtap="changeLanguage">EN|中文</view>
+
 <swiper class="banner" indicator-dots indicator-color="#rgba(255,255,255,0.5)" indicator-active-color="#fff" autoplay circular interval="3500">
   <swiper-item>
     <image mode="heightFix" src="https://images.theconversation.com/files/377569/original/file-20210107-17-q20ja9.jpg"/>
@@ -11,21 +13,21 @@
 </swiper>
 
 <view class="centerStyle">
-  <input class="inputBox" type="number" id="1p" maxlength="4" placeholder="Player 1" bindinput="input1" value="{{inputValue1}}"/>
-  <input class="inputBox" type="number" id="2p" maxlength="4" placeholder="Player 2" bindinput="input2" value="{{inputValue2}}"/>
+  <input class="inputBox" type="number" id="1p" maxlength="4" placeholder="{{content.p1}}" bindinput="input1" value="{{inputValue1}}"/>
+  <input class="inputBox" type="number" id="2p" maxlength="4" placeholder="{{content.p2}}" bindinput="input2" value="{{inputValue2}}"/>
 </view>
 <view class="centerStyle">
-  <input class="inputBox" type="number" id="3p" maxlength="4" placeholder="Player 3" bindinput="input3" value="{{inputValue3}}"/>
-  <input class="inputBox" type="number" id="4p" maxlength="4" placeholder="Player 4" bindinput="input4" value="{{inputValue4}}"/>
+  <input class="inputBox" type="number" id="3p" maxlength="4" placeholder="{{content.p3}}" bindinput="input3" value="{{inputValue3}}"/>
+  <input class="inputBox" type="number" id="4p" maxlength="4" placeholder="{{content.p4}}" bindinput="input4" value="{{inputValue4}}"/>
 </view>
 
 <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
   <view class="picker">
-    <view class='textStyle'>Amount:</view>
+    <view class='textStyle'>{{content.amt}}</view>
     <view class='amountStyle'>{{array[index]}} (${{objectArray[index].value}})</view>
   </view>
 </picker>
 
 
-<button type="primary" bindtap="calculateFinal" disabled="{{calStatus}}"> Calculate </button>
-<button type="warn" bindtap="clearNumbers" disabled="{{clsStatus}}"> Clear </button>
+<button type="primary" bindtap="calculateFinal" disabled="{{calStatus}}"> {{content.cal}} </button>
+<button type="warn" bindtap="clearNumbers" disabled="{{clsStatus}}"> {{content.cls}} </button>

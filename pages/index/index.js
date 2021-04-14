@@ -183,7 +183,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.clearNumbers()
+    this.clearNumbers();
+    wx.stopPullDownRefresh()
   },
     /**
    * 用户点击右上角分享
@@ -204,5 +205,16 @@ Page({
     return {
       title:'锄大D计分器',
     }
-  }
+  },
+  changeLanguage() {
+    app.changeLanguage()
+    wx.reLaunch({
+      url: '/pages/index/index',
+    })
+  },
+  onShow() {
+    this.setData({
+      content: app.globalData.content,
+    })
+  },
 })

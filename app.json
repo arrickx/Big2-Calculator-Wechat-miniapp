@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/info/info",
+    "pages/contact/contact",
     "pages/result/result",
     "pages/logs/logs"
   ],
@@ -11,6 +13,26 @@
     "navigationBarTextStyle":"black",
     "enablePullDownRefresh": true
   },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Home",
+        "iconPath": "pages/img/Home.png",
+        "selectedIconPath": "pages/img/Home2.png"
+      },{
+        "pagePath": "pages/info/info",
+        "text": "Info",
+        "iconPath": "pages/img/Paper.png",
+        "selectedIconPath": "pages/img/Paper2.png"
+      },{
+        "pagePath": "pages/contact/contact",
+        "text": "Contact",
+        "iconPath": "pages/img/Chat.png",
+        "selectedIconPath": "pages/img/Chat2.png"
+      }
+    ]
+  },  
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
