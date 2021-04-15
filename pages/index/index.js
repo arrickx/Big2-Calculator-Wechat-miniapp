@@ -137,24 +137,13 @@ Page({
     })
   },
   isEmpty: function() {
-    if (this.data.inputValue1!='' || this.data.inputValue2!='' || this.data.inputValue3!='' || this.data.inputValue4!=''|| this.data.dollarValue!='') {
-      this.setData({
-        clsStatus: false
-      })
-    } else {
-      this.setData({
-        clsStatus: true
-      })
-    }
-    if (this.data.inputValue1!='' && this.data.inputValue2!='' && this.data.inputValue3!='' && this.data.inputValue4!='' && this.data.dollarValue!='') {
-      this.setData({
-        calStatus: false
-      })
-    } else {
-      this.setData({
-        calStatus: true
-      })
-    }
+    const {inputValue1, inputValue2, inputValue3, inputValue4,dollarValue} = this.data
+    this.setData({
+       clsStatus: !(inputValue1 || inputValue2 || inputValue3 || inputValue4 || dollarValue)
+    })
+    this.setData({
+      calStatus: !(inputValue1 && inputValue2 && inputValue3 && inputValue4 && dollarValue)
+    })
   },
   onPullDownRefresh: function () {
     this.clearNumbers();
