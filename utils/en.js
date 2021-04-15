@@ -9,6 +9,12 @@ let en = {
   home:'Home',
   info:'Info',
   contact:'Contact',
+  win:'wins',
+  lose:'loses',
+  top1:'Champion',
+  top2:'2nd Place',
+  top3:'3rd Place',
+  top4:'4th Place',
 }
 
 module.exports = {

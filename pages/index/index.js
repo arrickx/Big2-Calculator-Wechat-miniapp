@@ -10,35 +10,7 @@ Page({
     inputValue4:'',
     calStatus:true,
     clsStatus:true,
-    dollarValue:0.25,
-    array: ['Penny - $ 0.01', 'Nickle - $ 0.05', 'Dime - $ 0.10', 'Quarter - $ 0.25', 'Half-Dollar - $ 0.50', 'Dollar - $ 1.00'],
-    objectArray: [
-      {
-        id: 0,
-        value: 0.01
-      },
-      {
-        id: 1,
-        value: 0.05
-      },
-      {
-        id: 2,
-        value: 0.10
-      },
-      {
-        id: 3,
-        value: 0.25
-      },
-      {
-        id: 4,
-        value: 0.50
-      },
-      {
-        id: 5,
-        value: 1.00
-      }
-    ],
-    index: 3,
+    dollarValue:'',
   },
   // create a function to change the data value to the input value
   input1: function (e) {
@@ -125,6 +97,27 @@ Page({
     }
     this.isEmpty()
   },
+  inputAmt: function (e) {
+    if (Math.abs(e.detail.value.length - this.data.dollarValue.length) != 1) {
+      this.setData({
+        dollarValue: ''
+      })
+      return ''
+    } else {
+      let reg = /^[0-9]*\.?[0-9]*$/
+      if (!reg.test(e.detail.value)) {
+        this.setData({
+          dollarValue: ''
+        })
+        return ''
+      } else {
+        this.setData({
+          dollarValue:e.detail.value
+        })
+      }
+    }
+    this.isEmpty()
+  },
   // create a function to clear the input value and index
   clearNumbers: function () {
     this.setData({
@@ -132,18 +125,9 @@ Page({
       inputValue2:'',
       inputValue3:'',
       inputValue4:'',
-      index:3
+      dollarValue:'',
     })
     this.isEmpty()
-  },
-  // create a functon to change display of picker and value of dollarValue
-  bindPickerChange: function (e) {
-    this.setData({
-      index: e.detail.value
-    })
-    this.setData({
-      dollarValue: this.data.objectArray[e.detail.value].value
-    })
   },
   // navigate to the result page and send the necessary data to the next page for calculation
   calculateFinal: function () {
@@ -153,7 +137,7 @@ Page({
     })
   },
   isEmpty: function() {
-    if (this.data.inputValue1!='' || this.data.inputValue2!='' || this.data.inputValue3!='' || this.data.inputValue4!='') {
+    if (this.data.inputValue1!='' || this.data.inputValue2!='' || this.data.inputValue3!='' || this.data.inputValue4!=''|| this.data.dollarValue!='') {
       this.setData({
         clsStatus: false
       })
@@ -162,7 +146,7 @@ Page({
         clsStatus: true
       })
     }
-    if (this.data.inputValue1!='' && this.data.inputValue2!='' && this.data.inputValue3!='' && this.data.inputValue4!='') {
+    if (this.data.inputValue1!='' && this.data.inputValue2!='' && this.data.inputValue3!='' && this.data.inputValue4!='' && this.data.dollarValue!='') {
       this.setData({
         calStatus: false
       })

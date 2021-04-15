@@ -20,11 +20,6 @@ button{
   width: 33%;
   border-radius: 10rpx;
 }
-.picker{
-  margin: 50rpx;
-  font-size: 30rpx;
-  font-weight: bold;
-}
 .textStyle{
   display: inline;
   padding-left: 18%;
@@ -32,4 +27,7 @@ button{
 .amountStyle{
   display: inline;
   padding-left: 15%;
+}
+.language{
+  margin-left: 50rpx;
 }

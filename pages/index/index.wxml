@@ -1,4 +1,4 @@
-<view bindtap="changeLanguage">EN|中文</view>
+<view class="language" bindtap="changeLanguage">EN|中文</view>
 
 <swiper class="banner" indicator-dots indicator-color="#rgba(255,255,255,0.5)" indicator-active-color="#fff" autoplay circular interval="3500">
   <swiper-item>
@@ -21,15 +21,8 @@
   <input class="inputBox" type="number" id="4p" maxlength="4" placeholder="{{content.p4}}" bindinput="input4" value="{{inputValue4}}"/>
 </view>
 
-<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-  <view class="picker">
-    <view class='textStyle'>{{content.amt}}</view>
-    <view class='amountStyle'>{{array[index]}}</view>
-  </view>
-</picker>
-
 <view class="centerStyle">
-  <input class="inputBox" type="digit" id="amt" placeholder="{{content.amt}}"/>
+  <input class="inputBox" type="digit" id="amt" placeholder="{{content.amt}}" bindinput="inputAmt" value="{{dollarValue}}" />
 </view>
 
 <button type="primary" bindtap="calculateFinal" disabled="{{calStatus}}"> {{content.cal}} </button>

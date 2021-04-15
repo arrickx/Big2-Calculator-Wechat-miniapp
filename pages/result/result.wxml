@@ -1,22 +1,22 @@
 <icon class="centerStyle iconStyle" type="success" size="150"></icon>
 <view class="textViewStyle">
-  <text class="textStyle1">Top Player</text>
-  <text class="textStyle">wins</text>
+  <text class="textStyle1">{{content.top1}}</text>
+  <text class="textStyle">{{content.win}}</text>
   <text class="textStyle">{{winner1}}</text>
 </view>
 <view class="textViewStyle">
-  <text class="textStyle1">Second Player</text>
+  <text class="textStyle1">{{content.top2}}</text>
   <text class="textStyle">{{winner2Text}}</text>
   <text class="textStyle">{{winner2}}</text>
 </view>
 <view class="textViewStyle">
-  <text class="textStyle1">Third Player</text>
+  <text class="textStyle1">{{content.top3}}</text>
   <text class="textStyle">{{loser1Text}}</text>
   <text class="textStyle">{{loser1}}</text>
 </view>
 <view class="textViewStyle">
-  <text class="textStyle1">Last Player</text>
-  <text class="textStyle">losses</text>
+  <text class="textStyle1">{{content.top4}}</text>
+  <text class="textStyle">{{content.lose}}</text>
   <text class="textStyle">{{loser2}}</text>
 </view>
 

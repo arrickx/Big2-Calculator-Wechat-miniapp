@@ -9,6 +9,12 @@ let cn = {
   home:'首页',
   info:'说明',
   contact:'反馈',
+  win:'赢',
+  lose:'输',
+  top1:'冠军玩家',
+  top2:'亚军玩家',
+  top3:'季军玩家',
+  top4:'最壕玩家',
 }
 
 module.exports = {

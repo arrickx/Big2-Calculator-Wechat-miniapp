@@ -1,12 +1,11 @@
 // pages/result/result.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    winner2Text:"wins",
-    loser1Text:"losses"
   },
 
   /**
@@ -39,13 +38,21 @@ Page({
     if (this.data.winner2<0) {
       that.setData({
         winner2:(this.data.winner2)*-1,
-        winner2Text:"losses",
+        winner2Text:app.globalData.content.lose,
+      }) 
+    } else {
+      that.setData({
+        winner2Text:app.globalData.content.win,
       }) 
     }
     if (this.data.loser1<0) {
       that.setData({
         loser1:(that.data.loser1)*-1,
-        loser1Text:"wins",
+        loser1Text:app.globalData.content.win,
+      }) 
+    } else {
+      that.setData({
+        loser1Text:app.globalData.content.lose,
       }) 
     }
   },
@@ -60,8 +67,10 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow() {
+    this.setData({
+      content: app.globalData.content,
+    })
   },
 
   /**
