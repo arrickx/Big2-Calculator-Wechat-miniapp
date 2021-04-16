@@ -1,3 +1,4 @@
+const app = getApp()
 // pages/contact/contact.js
 Page({
 
@@ -25,8 +26,13 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow() {
+    wx.setNavigationBarTitle({
+      title: app.globalData.content.title,
+    }),
+    this.setData({
+      content: app.globalData.content,
+    })
   },
 
   /**

@@ -1,4 +1,5 @@
 let en = {
+  title:'Big 2 Calculator',
   p1:'Player 1',
   p2:'Player 2',
   p3:'Player 3',
@@ -15,6 +16,19 @@ let en = {
   top2:'2nd Place',
   top3:'3rd Place',
   top4:'4th Place',
+  line1:'Calculation method:',
+  line2:'1. Calculate scores after all the cards in one of the hands are played',
+  line3:'2. Calculate the card score based on the number of cards remaining in each hand, assuming that the number of cards remaining is n:',
+  line4:'(1) when n<8, the score is n',
+  line5:'(2) 8≤n<10, the score is 2n',
+  line6:'(3) 10≤n<13, the score is 3n',
+  line7:'(4) n=13, the score is 4n',
+  line8:'(5) If at the end of the game, there are 8 or more cards in the hand, and there are 2 of spades at the same time, the card points must be multiplied by 2 at the end',
+  line9: '3. Calculate the final score according to the following formula',
+  line10:'A\'s score=(B-A)+(C-A)+(D-A)',
+  line11:'B\'s score=(A-B)+(C-B)+(D-B)',
+  line12:'C\'s score=(A-C)+(B-C)+(D-C)',
+  line13:'D\'s score=(A-D)+(B-D)+(C-D)',
 }
 
 module.exports = {

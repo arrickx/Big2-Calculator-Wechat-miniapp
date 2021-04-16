@@ -20,41 +20,15 @@ Page({
       inputValue3:Number(options.inputValue3Data),
       inputValue4:Number(options.inputValue4Data),
       dollarValue:parseFloat(options.dollarData),
-      scores:[Number(options.inputValue1Data),Number(options.inputValue2Data),Number(options.inputValue3Data),Number(options.inputValue4Data)]
-    })
-    // Sort the data by accessding order for easier calculation
-    this.data.scores.sort(function(a, b){return a-b});
-    // Minus the numbers by the lowest number to keep the best player's score as 0
-    that.setData({
-      processedScore:[this.data.scores[0]-this.data.scores[0],this.data.scores[1]-this.data.scores[0],this.data.scores[2]-this.data.scores[0],this.data.scores[3]-this.data.scores[0]]
     })
     // Calculate the final score for each player
+    const {inputValue1, inputValue2, inputValue3, inputValue4,dollarValue} = this.data
     that.setData({
-      winner1:((this.data.processedScore[0]+this.data.processedScore[1]+this.data.processedScore[2]+this.data.processedScore[3])*this.data.dollarValue).toFixed(2),
-      winner2:((this.data.processedScore[3]-this.data.processedScore[1]+this.data.processedScore[2]-this.data.processedScore[1]-this.data.processedScore[1])*this.data.dollarValue).toFixed(2),
-      loser1:((this.data.processedScore[2]+this.data.processedScore[2]-this.data.processedScore[3]-this.data.processedScore[1]+this.data.processedScore[2])*this.data.dollarValue).toFixed(2),
-      loser2:((this.data.processedScore[3]+this.data.processedScore[3]-this.data.processedScore[1]+this.data.processedScore[3]-this.data.processedScore[2])*this.data.dollarValue).toFixed(2),
+      result1:(((inputValue2-inputValue1)+(inputValue3-inputValue1)+(inputValue4-inputValue1))*dollarValue).toFixed(2),
+      result2:(((inputValue1-inputValue2)+(inputValue3-inputValue2)+(inputValue4-inputValue2))*dollarValue).toFixed(2),
+      result3:(((inputValue1-inputValue3)+(inputValue2-inputValue3)+(inputValue4-inputValue3))*dollarValue).toFixed(2),
+      result4:(((inputValue1-inputValue4)+(inputValue2-inputValue4)+(inputValue3-inputValue4))*dollarValue).toFixed(2),
     })
-    if (this.data.winner2<0) {
-      that.setData({
-        winner2:(this.data.winner2)*-1,
-        winner2Text:app.globalData.content.lose,
-      }) 
-    } else {
-      that.setData({
-        winner2Text:app.globalData.content.win,
-      }) 
-    }
-    if (this.data.loser1<0) {
-      that.setData({
-        loser1:(that.data.loser1)*-1,
-        loser1Text:app.globalData.content.win,
-      }) 
-    } else {
-      that.setData({
-        loser1Text:app.globalData.content.lose,
-      }) 
-    }
   },
 
   /**
@@ -68,6 +42,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    wx.setNavigationBarTitle({
+      title: app.globalData.content.title,
+    }),
     this.setData({
       content: app.globalData.content,
     })

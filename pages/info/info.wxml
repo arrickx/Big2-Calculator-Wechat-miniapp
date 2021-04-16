@@ -1,2 +1,19 @@
 <!--pages/info/info.wxml-->
-<text>pages/info/info.wxml</text>
+<view>{{content.line1}}</view>
+<view>{{content.line2}}</view>
+<view>{{content.line3}}</view>
+<view class="indentStyle">
+  <view>{{content.line4}}</view>
+  <view>{{content.line5}}</view>
+  <view>{{content.line6}}</view>
+  <view>{{content.line7}}</view>
+  <view>{{content.line8}}</view>
+</view>
+<view>{{content.line9}}</view>
+<view class="indentStyle">
+  <view>{{content.line10}}</view>
+  <view>{{content.line11}}</view>
+  <view>{{content.line12}}</view>
+  <view>{{content.line13}}</view>
+</view>
+

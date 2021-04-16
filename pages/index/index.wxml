@@ -22,7 +22,7 @@
 </view>
 
 <view class="centerStyle">
-  <input class="inputBox" type="digit" id="amt" placeholder="{{content.amt}}" bindinput="inputAmt" value="{{dollarValue}}" />
+  <input class="inputBox" type="digit" id="amt" maxlength="5" placeholder="{{content.amt}}" bindinput="inputAmt" value="{{dollarValue}}" />
 </view>
 
 <button type="primary" bindtap="calculateFinal" disabled="{{calStatus}}"> {{content.cal}} </button>

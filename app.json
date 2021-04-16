@@ -8,6 +8,7 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
+    "backgroundColor": "#aaaaaa",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "锄大D计分器",
     "navigationBarTextStyle":"black",

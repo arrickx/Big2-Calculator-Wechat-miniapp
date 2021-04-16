@@ -1,1 +1,7 @@
 /* pages/info/info.wxss */
+.indentStyle{
+  margin-left: 32rpx;
+}
+view{
+  margin: 16rpx 32rpx;
+}

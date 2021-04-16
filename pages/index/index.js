@@ -132,8 +132,9 @@ Page({
   // navigate to the result page and send the necessary data to the next page for calculation
   calculateFinal: function () {
     var that = this
+    const {inputValue1, inputValue2, inputValue3, inputValue4,dollarValue} = this.data
     wx.navigateTo({
-      url:'/pages/result/result?inputValue1Data=' + that.data.inputValue1 + '&inputValue2Data=' + that.data.inputValue2 + '&inputValue3Data=' + that.data.inputValue3 + '&inputValue4Data=' + that.data.inputValue4 + '&dollarData=' + that.data.dollarValue
+      url:'/pages/result/result?inputValue1Data=' + inputValue1 + '&inputValue2Data=' + inputValue2 + '&inputValue3Data=' + inputValue3 + '&inputValue4Data=' + inputValue4 + '&dollarData=' + dollarValue
     })
   },
   isEmpty: function() {
@@ -185,6 +186,9 @@ Page({
     })
   },
   onShow() {
+    wx.setNavigationBarTitle({
+      title: app.globalData.content.title,
+    }),
     this.setData({
       content: app.globalData.content,
     })
