@@ -29,6 +29,11 @@ let en = {
   line11:'B\'s score=(A-B)+(C-B)+(D-B)',
   line12:'C\'s score=(A-C)+(B-C)+(D-C)',
   line13:'D\'s score=(A-D)+(B-D)+(C-D)',
+  contact:'DM',
+  contactLine1:'If you have any suggestion or feedback, please feel free to comment by using the DM button.',
+  contactLine2:'I will try my best to go over all of them.',
+  contactLine3:'If you think this app is cool, please share it to your friends!',
+  contactLine4:'Thanks again for using this app!',
 }
 
 module.exports = {

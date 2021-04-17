@@ -5,3 +5,8 @@
 view{
   margin: 16rpx 32rpx;
 }
+image{
+  width: 100%;
+  padding: 16rpx 32rpx;
+  box-sizing: border-box;
+}

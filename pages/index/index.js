@@ -1,5 +1,4 @@
 // index.js
-// 获取应用实例
 const app = getApp()
 Page({
   // initialize the data
@@ -13,113 +12,23 @@ Page({
     dollarValue:'',
   },
   // create a function to change the data value to the input value
-  input1: function (e) {
-    if (Math.abs(e.detail.value.length - this.data.inputValue1.length) != 1) {
-      this.setData({
-        inputValue1: ''
-      })
-      return ''
-    } else {
-      let reg = /^[0-9]*$/
-      if (!reg.test(e.detail.value)) {
-        this.setData({
-          inputValue1: ''
-        })
-        return ''
-      } else {
-        this.setData({
-          inputValue1:e.detail.value
-        })
-      }
-    }
-    this.isEmpty()
+  input1(e) {
+    this.checkInput(e,'inputValue1')
   },
-  input2: function (e) {
-    if (Math.abs(e.detail.value.length - this.data.inputValue2.length) != 1) {
-      this.setData({
-        inputValue2: ''
-      })
-      return ''
-    } else {
-      let reg = /^[0-9]*$/
-      if (!reg.test(e.detail.value)) {
-        this.setData({
-          inputValue2: ''
-        })
-        return ''
-      } else {
-        this.setData({
-          inputValue2:e.detail.value
-        })
-      }
-    }
-    this.isEmpty()
+  input2(e) {
+    this.checkInput(e,'inputValue2')
   },
-  input3: function (e) {
-    if (Math.abs(e.detail.value.length - this.data.inputValue3.length) != 1) {
-      this.setData({
-        inputValue3: ''
-      })
-      return ''
-    } else {
-      let reg = /^[0-9]*$/
-      if (!reg.test(e.detail.value)) {
-        this.setData({
-          inputValue3: ''
-        })
-        return ''
-      } else {
-        this.setData({
-          inputValue3:e.detail.value
-        })
-      }
-    }
-    this.isEmpty()
+  input3(e) {
+    this.checkInput(e,'inputValue3')
   },
-  input4: function (e) {
-    if (Math.abs(e.detail.value.length - this.data.inputValue4.length) != 1) {
-      this.setData({
-        inputValue4: ''
-      })
-      return ''
-    } else {
-      let reg = /^[0-9]*$/
-      if (!reg.test(e.detail.value)) {
-        this.setData({
-          inputValue4: ''
-        })
-        return ''
-      } else {
-        this.setData({
-          inputValue4:e.detail.value
-        })
-      }
-    }
-    this.isEmpty()
+  input4(e) {
+    this.checkInput(e,'inputValue4')
   },
-  inputAmt: function (e) {
-    if (Math.abs(e.detail.value.length - this.data.dollarValue.length) != 1) {
-      this.setData({
-        dollarValue: ''
-      })
-      return ''
-    } else {
-      let reg = /^[0-9]*\.?[0-9]*$/
-      if (!reg.test(e.detail.value)) {
-        this.setData({
-          dollarValue: ''
-        })
-        return ''
-      } else {
-        this.setData({
-          dollarValue:e.detail.value
-        })
-      }
-    }
-    this.isEmpty()
+  inputAmt(e) {
+    this.checkInput(e,'dollarValue')
   },
   // create a function to clear the input value and index
-  clearNumbers: function () {
+  clearNumbers() {
     this.setData({
       inputValue1:'',
       inputValue2:'',
@@ -130,14 +39,14 @@ Page({
     this.isEmpty()
   },
   // navigate to the result page and send the necessary data to the next page for calculation
-  calculateFinal: function () {
-    var that = this
+  calculateFinal() {
     const {inputValue1, inputValue2, inputValue3, inputValue4,dollarValue} = this.data
     wx.navigateTo({
       url:'/pages/result/result?inputValue1Data=' + inputValue1 + '&inputValue2Data=' + inputValue2 + '&inputValue3Data=' + inputValue3 + '&inputValue4Data=' + inputValue4 + '&dollarData=' + dollarValue
     })
   },
-  isEmpty: function() {
+  // 1. check if any of the input is empty 2. check if all the input is empty. 
+  isEmpty() {
     const {inputValue1, inputValue2, inputValue3, inputValue4,dollarValue} = this.data
     this.setData({
        clsStatus: !(inputValue1 || inputValue2 || inputValue3 || inputValue4 || dollarValue)
@@ -146,17 +55,19 @@ Page({
       calStatus: !(inputValue1 && inputValue2 && inputValue3 && inputValue4 && dollarValue)
     })
   },
-  onPullDownRefresh: function () {
+  // clear all the inputed number if user use pull down refresh
+  onPullDownRefresh() {
     this.clearNumbers();
     wx.stopPullDownRefresh()
   },
-  onShareAppMessage: function () {
+  // create share and add to favorites image and title
+  onShareAppMessage() {
     return {
       title:'锄大D计分器',
       imageUrl:'/pages/img/logo.jpg'
     }
   },
-  onAddToFavorites(res) {
+  onAddToFavorites() {
     return {
       title:'锄大D计分器',
       imageUrl:'/pages/img/logo.jpg'
@@ -167,6 +78,7 @@ Page({
       title:'锄大D计分器',
     }
   },
+  // initial the function of change language and change tabbar title
   changeLanguage() {
     app.changeLanguage()
     wx.setTabBarItem({
@@ -185,6 +97,7 @@ Page({
       url: '/pages/index/index',
     })
   },
+  // initial the language data from content. also update the navigation bar title
   onShow() {
     wx.setNavigationBarTitle({
       title: app.globalData.content.title,
@@ -192,5 +105,20 @@ Page({
     this.setData({
       content: app.globalData.content,
     })
+  },
+  // check if the input is valid (numbers and dots, only 1 dot allow)
+  checkInput(e,input){
+    let reg = /^[0-9]*\.?[0-9]*$/
+    if (!reg.test(e.detail.value)) {
+      this.setData({
+        [input]: ''
+      })
+      return ''
+    } else {
+      this.setData({
+        [input]:e.detail.value
+      })
+    }
+    this.isEmpty()
   },
 })

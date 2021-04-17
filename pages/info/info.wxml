@@ -1,4 +1,5 @@
 <!--pages/info/info.wxml-->
+<image mode="widthFix" src="https://www.animationvideo.co/wp-content/uploads/2017/12/How-to-video.jpg"/>
 <view>{{content.line1}}</view>
 <view>{{content.line2}}</view>
 <view>{{content.line3}}</view>

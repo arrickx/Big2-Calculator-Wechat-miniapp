@@ -1,16 +1,6 @@
 // pages/result/result.js
 const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     // Get data from the previous page and put it into this page's data
     var that = this
@@ -30,17 +20,7 @@ Page({
       result4:(((inputValue1-inputValue4)+(inputValue2-inputValue4)+(inputValue3-inputValue4))*dollarValue).toFixed(2),
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
+  // initial the language data from content. also update the navigation bar title
   onShow() {
     wx.setNavigationBarTitle({
       title: app.globalData.content.title,
@@ -49,39 +29,22 @@ Page({
       content: app.globalData.content,
     })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  // create share and add to favorites image and title
+  onShareAppMessage() {
+    return {
+      title:'锄大D计分器',
+      imageUrl:'/pages/img/logo.jpg'
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  onAddToFavorites() {
+    return {
+      title:'锄大D计分器',
+      imageUrl:'/pages/img/logo.jpg'
+    }
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  onShareTimeline() {
+    return {
+      title:'锄大D计分器',
+    }
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

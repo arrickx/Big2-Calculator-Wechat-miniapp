@@ -1,2 +1,7 @@
 <!--pages/contact/contact.wxml-->
-<text>pages/contact/contact.wxml</text>
+<image mode="widthFix" src="https://i.ibb.co/WsdgzF9/communication.jpg"/>
+<view>{{content.contactLine1}}</view>
+<view>{{content.contactLine2}}</view>
+<view>{{content.contactLine3}}</view>
+<view>{{content.contactLine4}}</view>
+<button open-type="contact" show-message-card bindcontact="handleContact" type="primary">{{content.contact}}</button>

@@ -1,1 +1,12 @@
 /* pages/contact/contact.wxss */
+image{
+  width: 100%;
+  padding: 16rpx 32rpx;
+  box-sizing: border-box;
+}
+view{
+  margin: 0rpx 32rpx 32rpx 32rpx;
+}
+button{
+  margin-top: 100rpx;
+}
