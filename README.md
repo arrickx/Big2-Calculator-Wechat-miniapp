@@ -1,2 +1,2 @@
-# BigD-Calculator-wechat-miniapp
+# Big2-Calculator-wechat-miniapp
  
