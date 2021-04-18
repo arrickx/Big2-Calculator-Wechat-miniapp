@@ -1,18 +1,18 @@
 <icon class="centerStyle iconStyle" type="success" size="150"></icon>
 <view class="textViewStyle">
-  <text class="textStyle1">{{content.p1}}</text>
+  <text class="textStyle1">{{content.p1}} ({{content.score}}{{aScores}})</text>
   <text class="textStyle">{{result1}}</text>
 </view>
 <view class="textViewStyle">
-  <text class="textStyle1">{{content.p2}}</text>
+  <text class="textStyle1">{{content.p2}} ({{content.score}}{{bScores}})</text>
   <text class="textStyle">{{result2}}</text>
 </view>
 <view class="textViewStyle">
-  <text class="textStyle1">{{content.p3}}</text>
+  <text class="textStyle1">{{content.p3}} ({{content.score}}{{cScores}})</text>
   <text class="textStyle">{{result3}}</text>
 </view>
 <view class="textViewStyle">
-  <text class="textStyle1">{{content.p4}}</text>
+  <text class="textStyle1">{{content.p4}} ({{content.score}}{{dScores}})</text>
   <text class="textStyle">{{result4}}</text>
 </view>
 

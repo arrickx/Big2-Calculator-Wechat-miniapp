@@ -4,4 +4,4 @@
 <view>{{content.contactLine2}}</view>
 <view>{{content.contactLine3}}</view>
 <view>{{content.contactLine4}}</view>
-<button open-type="contact" show-message-card bindcontact="handleContact" type="primary">{{content.contact}}</button>
+<button open-type="contact" show-message-card bindcontact="handleContact" type="primary" session-from>{{content.contact}}</button>

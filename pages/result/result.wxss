@@ -8,9 +8,9 @@
   justify-content: space-between;
 }
 .textStyle1 {
-  margin: 20rpx 150rpx;
+  margin: 20rpx 50rpx;
 }
 .textStyle {
   margin-top: 20rpx;
-  margin-right: 100rpx;
+  margin-right: 50rpx;
 }
