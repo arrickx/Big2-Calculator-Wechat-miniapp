@@ -41,7 +41,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.16.0",
-  "appid": "wxfec0f46e69b0e4d0",
+  "appid": YOUR APP ID,
   "projectname": "锄大D计分器",
   "debugOptions": {
     "hidedInDevtools": []
