@@ -41,7 +41,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.16.0",
-  "appid": YOUR APP ID,
+  "appid": "YOUR APP ID", #Please be adivse  you can use a trail app id for this 
   "projectname": "锄大D计分器",
   "debugOptions": {
     "hidedInDevtools": []
